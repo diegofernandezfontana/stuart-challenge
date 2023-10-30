@@ -1,7 +1,7 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
-export class Log {
+export class LogModel {
   @Field(() => Int)
   id: number;
 

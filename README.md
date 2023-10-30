@@ -53,13 +53,26 @@ $ pnpm run start:prod
 
 ## Test
 
-```bash
-# unit tests
-$ pnpm run test
+Manual testing:
 
-# e2e tests
-$ pnpm run test:e2e
+If the app is running, you can hit the endpoint:
 
-# test coverage
-$ pnpm run test:cov
+CURL:
+
+```
+curl --location 'localhost:3000/logger' \
+--header 'Content-Type: application/json' \
+--data '{
+    "message":"YOU_CAN__ADD_YOUR_MESSAGE_HERE"
+}'
+```
+
+If you are using postman, you can try with the endpoint:
+
+POST: `localhost:3000/logger`
+
+And in the body add the JSON:
+
+```
+{ "message":"This is message cannot be blank, otherwise it will throw a domain exception."}
 ```
