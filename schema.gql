@@ -1,0 +1,17 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Log {
+  id: Int!
+  message: String!
+  timestamp: String!
+}
+
+type Query {
+  logs: [Log!]!
+}
+
+type Mutation {
+  addLog(message: String!): Log!
+}
