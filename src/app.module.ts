@@ -10,6 +10,7 @@ import { LoggerModule } from './logger/logger.module';
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
+      //This should not be used in PROD ENV.
       playground: true,
       autoSchemaFile: true,
     }),

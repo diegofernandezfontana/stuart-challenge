@@ -28,11 +28,13 @@ Task Description:
 In order to run this project you will need
 
 - [Node v20.9](https://nodejs.org/en). This is the current LTS
-- [NVM](https://github.com/nvm-sh/nvm)
+- [NVM](https://github.com/nvm-sh/nvm). This will allow you to switch node versions if you have multiple projects.
 - Docker (Will add instalation later)
 - [PNPM](https://pnpm.io/) or [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) or [YARN](https://yarnpkg.com/)
 
 ## Installation
+
+You can switch your commands to run either with pnpm, yarn or npm. (You should replace pnpm, if you want to execute them with different package manager)
 
 ```bash
 $ pnpm install
@@ -51,11 +53,11 @@ $ pnpm run start:dev
 $ pnpm run start:prod
 ```
 
-## Test
+## Manual check
 
-Manual testing:
-RESTfull
-If the app is running, you can hit the endpoint:
+### - REST API
+
+Start the app with one of the previous commands to test the rest api or the graphql resolvers.
 
 CURL:
 
@@ -68,7 +70,6 @@ curl --location 'localhost:3000/logger' \
 ```
 
 If you are using postman, you can try with the endpoint:
-
 POST: `localhost:3000/logger`
 
 And in the body add the JSON:
@@ -77,12 +78,12 @@ And in the body add the JSON:
 { "message":"This is message cannot be blank, otherwise it will throw a domain exception."}
 ```
 
-If you want to try the graphql resolver:
+### - Graphql resolver:
 
-You can start the application:
+The app has playground available at: `http://localhost:3000/graphql`, you can add:
 
-`http://localhost:3000/graphql`
-
+```
 mutation {
-createLog(message: "THIS_CAN_BE_YOUR_MESSAGE AND IT CAN HAVE SPACES")
+   createLog(message: "THIS_CAN_BE_YOUR_MESSAGE AND IT CAN HAVE SPACES")
 }
+```
