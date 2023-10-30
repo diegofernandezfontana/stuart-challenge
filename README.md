@@ -54,7 +54,7 @@ $ pnpm run start:prod
 ## Test
 
 Manual testing:
-
+RESTfull
 If the app is running, you can hit the endpoint:
 
 CURL:
@@ -76,3 +76,13 @@ And in the body add the JSON:
 ```
 { "message":"This is message cannot be blank, otherwise it will throw a domain exception."}
 ```
+
+If you want to try the graphql resolver:
+
+You can start the application:
+
+`http://localhost:3000/graphql`
+
+mutation {
+createLog(message: "THIS_CAN_BE_YOUR_MESSAGE AND IT CAN HAVE SPACES")
+}
